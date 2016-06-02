@@ -1,19 +1,18 @@
 public class OurStrategy extends GreedStrategy{
-
+	public static int stopLength;
+	public int stopBank;
 	public int choose(GreedOption[] options, int[] dice, int bank) {
 		GreedOption bestOption;
+		int  bestChoice = 0;
 		
-		for(GreedOption option : options){
-			//if(option)
-			//	bestOption =
-		}
-		
-		if(dice.length <= 2 || bank > 3000)
+		if(dice.length == 1)
+			return options.length - 2;
+		else if(dice.length <= 2 || bank > 3000)
 			return options.length - 1;
-
-			
-			
-		return 1;
+		else if(dice.length > 4 && options[1].getValue())
+			return options.length - 2;
+		else
+			return 1;
 	}
 
 	public String playerName() {
@@ -24,5 +23,11 @@ public class OurStrategy extends GreedStrategy{
 	public String author() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public static void main()
+	{
+		//GreedGame game = new GreedGame(null, false);
+		//game.evaluatePlayer(this);
+		//new ScoringCombination
 	}
 }
